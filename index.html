@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech & Play | IA, Tecnología y Gaming</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    
+    <style>
+        :root {
+            --neon: #00f3ff;
+            --cyber: #bc13fe;
+            --dark: #0a0a16;
+            --gray: #1a1a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0,243,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,243,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            z-index: -1;
+        }
+
+        .text-shadow {
+            text-shadow: 0 0 10px var(--neon), 0 0 20px var(--neon);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 15px currentColor;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--neon);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon);
+        }
+
+        header {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 6vw, 4rem);
+            margin-bottom: 20px;
+        }
+
+        .btn-main {
+            background: var(--neon);
+            color: var(--dark);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            box-shadow: 0 0 25px var(--neon);
+            transform: scale(1.05);
+        }
+
+        section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .neon-text { color: var(--neon); }
+        .cyber-text { color: var(--cyber); }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--neon);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #aaa;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .btn-neon {
+            display: inline-block;
+            color: var(--neon);
+            border: 1px solid var(--neon);
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-neon:hover {
+            background: var(--neon);
+            color: var(--dark);
+        }
+
+        .btn-cyber {
+            display: inline-block;
+            color: var(--cyber);
+            border: 1px solid var(--cyber);
+            padding: 8px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-cyber:hover {
+            background: var(--cyber);
+            color: var(--dark);
+        }
+
+        .counter-box {
+            text-align: center;
+            border: 2px solid var(--neon);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        .counter-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: rgb(229, 226, 226);
+        }
+
+        .comment-item {
+            background: #1e1e30;
+            border-left: 3px solid var(--neon);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #111;
+            border: 1px solid #333;
+            color: rgb(223, 208, 208);
+            border-radius: 5px;
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+            color: #777;
+        }
+       
+        button {
+            background: var(--neon);
+            color: var(--dark);
+            border: none;
+            padding: 14px 22px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            font-family: 'Orbitron', sans-serif;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+            box-shadow: 0 0 15px rgba(0,243,255,0.2);
+        }
+        button:hover {
+            background: white;
+            color: var(--dark);
+            transform: scale(1.03);
+            box-shadow: 0 0 25px var(--neon);
+        }
+        .card-link {
+            text-align: center;
+            background-color: #0e2d2e;
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--neon);
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s, color 0.3s, transform 0.3s;
+            border-radius: 900px;
+            padding: 12px 26px;
+        }
+
+        .card-link:hover {
+            background: rgba(0, 243, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        #location {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        #location h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        #location p {
+            color: #bbb;
+            max-width: 760px;
+            margin: 0 auto 24px;
+            line-height: 1.7;
+        }
+
+        #location button {
+            padding: 14px 28px;
+            background: var(--neon);
+            color: var(--dark);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.25);
+        }
+
+        #location button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 28px rgba(0, 243, 255, 0.35);
+        }
+
+        #map {
+            height: 450px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 18px;
+            border: 2px solid rgba(0, 243, 255, 0.25);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.08);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+
+    <div class="container">
+        
+        <nav>
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 100 100" fill="#00f3ff">
+                    <path d="M50 0 L95 25 L95 75 L50 100 L5 75 L5 25 Z" />
+                    <path d="M50 20 L80 35 L80 65 L50 80 L20 65 L20 35 Z" fill="#0a0a16" />
+                    <polygon points="50,30 70,50 50,70 30,50" fill="#00f3ff" />
+                </svg>
+                <span class="logo-text text-shadow">TECH & PLAY</span>
+            </div>
+           
+        </nav>
+
+        <header>
+            <h2>EL FUTURO ES <span class="neon-text text-shadow">AHORA</span></h2>
+            <p style="font-size: 22px; color: #ccc; max-width: 700px;">Descubre las últimas tendencias en Tecnología, Inteligencia Artificial y el mundo Gaming.</p>
+            <a href="#explorar" class="btn-main">Introducción</a>
+        </header>
+
+        <main id="explorar">
+            
+            <section id="tech">
+                <h2 class="section-title neon-text">TECNOLOGÍA</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3 class="neon-text">Conectividad 5G/6G</h3>
+                        <p id="p1">La nueva era de las telecomunicaciones permite velocidades de descarga ultrarrápidas, eliminando el retraso en la transmisión de datos y permitiendo que millones de dispositivos se conecten simultáneamente sin fallos, fundamentales para ciudades inteligentes.</p>
+                        <span onclick="document.getElementById('p1').style.display='block'" class="btn-neon btn-glow">Ver más</span>
+                    </div>
+                    <div class="card">
+                        <h3 class="neon-text">Hardware Innovador</h3>
+                        <p id="p2">Los componentes electrónicos evolucionan a pasos agigantados, ofreciendo mayor potencia de cálculo con menor consumo energético. Desde procesadores cuánticos hasta tarjetas gráficas que definen la realidad visual moderna.</p>
+                        <span onclick="document.getElementById('p2').style.display='block'" class="btn-neon btn-glow">Ver más</span>
+                    </div>
+                    <div class="card">
+                        <h3 class="neon-text">Internet de las Cosas</h3>
+                        <p id="p3">La interconexión de objetos cotidianos con internet transforma nuestro entorno. Electrodomésticos, vehículos y sistemas de seguridad se comunican entre sí para automatizar tareas, optimizar recursos y ofrecer un control total desde cualquier lugar.</p>
+                        <span onclick="document.getElementById('p3').style.display='block'" class="btn-neon btn-glow">Ver más</span>
+                    </div>
+                    <a href="Untiled-3.html" class="card-link">Saber más</a>
+                </div>
+            </section>
+
+            <section id="ia">
+                <h2 class="section-title cyber-text">INTELIGENCIA ARTIFICIAL</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3 class="cyber-text">Machine Learning</h3>
+                        <p id="p4">Los sistemas aprenden de grandes volúmenes de datos identificando patrones que los humanos no ven. Esto permite predecir comportamientos, personalizar experiencias digitales y tomar decisiones lógicas basadas en estadísticas reales.</p>
+                        <span onclick="document.getElementById('p4').style.display='block'" class="btn-cyber btn-glow">Ver más</span>
+                    </div>
+                    <div class="card">
+                        <h3 class="cyber-text">Generación de Contenido</h3>
+                        <p id="p5">Las redes neuronales son capaces ahora de crear imágenes, escribir textos, componer música y generar código fuente. Esta revolución creativa está cambiando industrias enteras y abriendo puertas a una nueva forma de expresión artística.</p>
+                        <span onclick="document.getElementById('p5').style.display='block'" class="btn-cyber btn-glow">Ver más</span>
+                    </div>
+                    <div class="card">
+                        <h3 class="cyber-text">Automatización</h3>
+                        <p id="p6">La IA y la robótica trabajan juntas para reemplazar tareas repetitivas o peligrosas en la industria y servicios. Esto aumenta la eficiencia, reduce errores humanos y permite que las personas se enfoquen en actividades más creativas.</p>
+                        <span onclick="document.getElementById('p6').style.display='block'" class="btn-cyber btn-glow">Ver más</span>
+                    </div>
+                    <a href="Untiled-4.html" class="card-link">Saber más</a>
+                </div>
+            </section>
+
+            <section id="games">
+                <h2 class="section-title neon-text">VIDEOJUEGOS</h2>
+                <div class="grid-3">
+                    <div class="card">
+                        <h3 class="neon-text">Gráficos Realistas</h3>
+                        <p id="p7">Tecnologías como el Ray Tracing simulan cómo se comporta la luz en la vida real, creando reflejos y sombras perfectas. Junto con resoluciones 4K y 8K, los mundos virtuales son casi indistinguibles de la realidad física.</p>
+                        <div class="game-info" id="info7" style="display:none;">
+                            <strong>Ejemplos:</strong><br>
+                            • <strong>Ready or Not</strong>: Shooter táctico con gráficos ultra detallados y física realista. ~15.000 - 20.000 jugadores mensuales.<br>
+                            • <strong>Forza Horizon 5</strong>: Mundo abierto con paisajes impresionantes y efectos de luz espectaculares. Más de 3 millones de jugadores mensuales.<br>
+                            • <strong>Silent Hill 2 Remake</strong>: Terror psicológico con gráficos fotorrealistas gracias a Unreal Engine 5.<br>
+                        </div>
+                    </div>
+                   
+                </div>
+                 <a href="Untiled-2.html" class="card-link">Saber más</a>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <span onclick="document.getElementById('p7').style.display='block'; document.getElementById('info7').style.display='block'" class="btn-neon btn-glow">Ver más</span>
+                    <a href="https://store.steampowered.com/app/2124490/SILENT_HILL_2/" target="_blank" class="btn-neon">Descargar Silent Hill 2 Remake</a>
+                    <a href="https://store.steampowered.com/app/1144200/Ready_or_Not/" target="_blank" class="btn-neon">Descargar Ready or Not</a>
+                    <a href="https://www.xbox.com/es-MX/games/store/forza-horizon-5" target="_blank" class="btn-neon">Descargar Forza Horizon 5</a>
+                </div>
+            </section>
+
+            <section id="visitor-stats">
+                <div class="counter-box">
+                    <p style="color: var(--neon); font-family: 'Orbitron'; font-size: 14px;">VISITANTES</p>
+                    <p id="contador" class="counter-number">00000</p>
+                </div>
+            </section>
+
+            <section id="discussion">
+                <h2 class="section-title neon-text">Foro de Discusión</h2>
+                <form id="comment-form">
+                    <input type="text" id="user-name" class="form-input" placeholder="Tu apodo" required>
+                    <textarea id="user-comment" class="form-textarea" rows="3" placeholder="¿Cuéntanos tu opinión?" required></textarea>
+                    <button id="publicar" class="btn-main" type="submit">Publicar</button>
+                </form>
+                <div id="comments-display"></div>
+            </section>
+
+            <section id="location">
+                <h2 class="section-title neon-text">Mi ubicación</h2>
+                <p>Presiona el botón para mostrar tu posición actual en el mapa. El mapa se actualizará cuando permitas el acceso a tu ubicación.</p>
+                <button id="location-button" onclick="mostrarUbicacion()">Mostrar mi ubicación</button>
+                <div id="map"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Función para obtener la ubicación del usuario
+        
+        // Crear mapa inicial
+        const mapa = L.map('map').setView([0,0], 2);
+
+        // Cargar mapa
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap'
+        }).addTo(mapa);
+
+        let marcador;
+
+        function mostrarUbicacion(){
+
+            if(navigator.geolocation){
+
+                navigator.geolocation.getCurrentPosition(
+
+                    function(posicion){
+
+                        const lat = posicion.coords.latitude;
+                        const lon = posicion.coords.longitude;
+
+                        // Mover mapa a la ubicación
+                        mapa.setView([lat, lon], 15);
+
+                        // Eliminar marcador anterior
+                        if(marcador){
+                            mapa.removeLayer(marcador);
+                        }
+
+                        // Agregar marcador
+                        marcador = L.marker([lat, lon])
+                            .addTo(mapa)
+                            .bindPopup("¡Estás aquí!")
+                            .openPopup();
+
+                    },
+
+                    function(error){
+                        alert("No se pudo obtener la ubicación.");
+                    }
+
+                );
+
+            } else {
+                alert("Tu navegador no soporta geolocalización.");
+            }
+        }
+
+
+
+
+
+
+
+
+
+    // Contador de visitas
+    const visitCountKey = 'visitCount';
+    const visitCount = Number(localStorage.getItem(visitCountKey) || 0) + 1;
+    localStorage.setItem(visitCountKey, visitCount);
+    document.getElementById('contador').innerText = String(visitCount).padStart(5, '0');
+
+    // Comentarios
+    const form = document.getElementById('comment-form');
+    const display = document.getElementById('comments-display');
+    const commentsKey = 'comments';
+
+    function loadComments() {
+        const comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+        display.innerHTML = [...comments].reverse().map(comment => `
+            <div class="comment-item">
+                <strong>${comment.name}:</strong> ${comment.text}
+            </div>
+        `).join('');
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('user-name').value.trim();
+        const text = document.getElementById('user-comment').value.trim();
+        if (!name || !text) return;
+
+        const comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+        comments.push({ name, text });
+        localStorage.setItem(commentsKey, JSON.stringify(comments));
+        form.reset();
+        loadComments();
+    });
+
+    loadComments();
+</script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia Artificial - Temas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            font-weight: 300;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ecf0f1;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card-title {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-content {
+            padding: 2rem;
+            background: white;
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        .card-content p {
+            margin-bottom: 1rem;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .card-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card-header {
+                padding: 1.5rem;
+            }
+
+            .card-content {
+                padding: 1.5rem;
+                max-height: 300px;
+            }
+        }
+ /* Comentarios */
+        #comment-form { display: grid; gap: 10px; margin-top: 20px; }
+        input, textarea { background: #05050a; border: 1px solid #444; color: white; padding: 12px; border-radius: 5px; }
+        button.btn-main {
+            background: linear-gradient(135deg, #4f8cff 0%, #7b61ff 100%);
+            color: #ffffff;
+            padding: 0.85rem 1.8rem;
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            box-shadow: 0 14px 30px rgba(79, 140, 255, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        }
+
+        button.btn-main:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.06);
+            box-shadow: 0 18px 40px rgba(79, 140, 255, 0.28);
+        }
+
+        button.btn-main:active {
+            transform: translateY(0);
+            box-shadow: 0 10px 22px rgba(79, 140, 255, 0.22);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <main>
+        <header>
+            <h1>Inteligencia Artificial</h1>
+            <p class="subtitle">Explorando el futuro de la tecnología inteligente</p>
+        </header>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🧠</span>
+                    <h2 class="card-title">IA en la Educación</h2>
+                </div>
+                <div class="card-content">
+                    <p>La <span class="highlight">inteligencia artificial</span> ha transformado de manera importante el sector educativo en los últimos años. Esta tecnología permite desarrollar herramientas y sistemas capaces de adaptarse a las necesidades de cada estudiante, mejorando la forma en que las personas aprenden y acceden al conocimiento.</p>
+                    <p>Uno de los principales beneficios de la inteligencia artificial en la educación es la personalización del aprendizaje. Las plataformas educativas inteligentes pueden analizar el rendimiento de los estudiantes y adaptar ejercicios, actividades y contenidos según sus habilidades y dificultades. Esto ayuda a que cada alumno avance a su propio ritmo y reciba apoyo en las áreas donde más lo necesita.</p>
+                    <p>También existen asistentes virtuales y chatbots educativos que pueden responder preguntas, explicar temas y ayudar con tareas escolares. Estas herramientas están disponibles las 24 horas y permiten que los estudiantes tengan apoyo adicional fuera del salón de clases.</p>
+                    <p>La inteligencia artificial también facilita el trabajo de los docentes. Algunos sistemas pueden revisar tareas, organizar información y generar reportes sobre el progreso de los alumnos, permitiendo que los profesores dediquen más tiempo a la enseñanza y atención personalizada.</p>
+                    <p>Otra aplicación importante es el uso de traductores automáticos y sistemas de reconocimiento de voz, que ayudan a estudiantes con diferentes idiomas o discapacidades. Además, la IA puede utilizarse junto con tecnologías como la realidad virtual para crear experiencias de aprendizaje más dinámicas e interactivas.</p>
+                    <p>Sin embargo, también existen desafíos. Algunas personas consideran que depender demasiado de la tecnología podría reducir la interacción humana en la educación. Además, no todas las escuelas tienen acceso a herramientas avanzadas debido a limitaciones económicas o tecnológicas.</p>
+                    <p>A pesar de estos retos, la inteligencia artificial continuará teniendo un papel importante en la educación, ayudando a crear métodos de enseñanza más modernos, accesibles y eficientes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">🏥</span>
+                    <h2 class="card-title">IA en la Medicina</h2>
+                </div>
+                <div class="card-content">
+                    <p>La <span class="highlight">inteligencia artificial</span> ha revolucionado el campo de la medicina gracias a su capacidad para analizar grandes cantidades de información de manera rápida y precisa. Actualmente, muchos hospitales y centros médicos utilizan sistemas inteligentes para apoyar el diagnóstico, tratamiento y prevención de enfermedades.</p>
+                    <p>Uno de los usos más importantes de la IA en la medicina es el análisis de imágenes médicas. Los sistemas de inteligencia artificial pueden detectar patrones en radiografías, tomografías y resonancias magnéticas, ayudando a identificar enfermedades como cáncer, neumonía o problemas cardíacos. En algunos casos, estas herramientas pueden detectar anomalías más rápido que una persona.</p>
+                    <p>La IA también se utiliza para analizar historiales clínicos y datos de pacientes con el fin de predecir riesgos de enfermedades o recomendar tratamientos personalizados. Gracias a esto, los médicos pueden tomar decisiones más rápidas y precisas.</p>
+                    <p>En el área de investigación médica, la inteligencia artificial ayuda a desarrollar nuevos medicamentos y tratamientos. Los sistemas inteligentes pueden analizar millones de datos científicos para encontrar posibles soluciones a enfermedades complejas. Esto acelera procesos que anteriormente podían tardar muchos años.</p>
+                    <p>Otra aplicación importante es el uso de robots médicos y asistentes virtuales en hospitales. Algunos robots ayudan durante cirugías de alta precisión, mientras que otros pueden transportar medicamentos o apoyar en tareas de atención médica.</p>
+                    <p>La inteligencia artificial también ha mejorado la telemedicina, permitiendo consultas médicas a distancia y monitoreo de pacientes mediante dispositivos inteligentes. Esto facilita el acceso a servicios médicos en lugares alejados o con pocos recursos.</p>
+                    <p>A pesar de sus ventajas, existen preocupaciones relacionadas con la privacidad de los datos médicos y la necesidad de supervisión humana. La IA no reemplaza a los médicos, sino que funciona como una herramienta de apoyo para mejorar la atención de los pacientes.</p>
+                    <p>En el futuro, la inteligencia artificial probablemente seguirá transformando la medicina, haciendo los diagnósticos más rápidos, los tratamientos más precisos y los servicios de salud más eficientes.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-icon">⚖️</span>
+                    <h2 class="card-title">Ventajas y Riesgos</h2>
+                </div>
+                <div class="card-content">
+                    <p>La <span class="highlight">inteligencia artificial</span> forma parte de la vida diaria de millones de personas. Muchas aplicaciones, dispositivos y servicios utilizan sistemas inteligentes para facilitar tareas, ofrecer recomendaciones y automatizar procesos. Esta tecnología ha traído numerosas ventajas, aunque también ha generado algunos riesgos y preocupaciones.</p>
+                    <p>Entre las principales ventajas de la inteligencia artificial se encuentra la automatización de actividades. Gracias a la IA, muchas tareas pueden realizarse de manera más rápida y eficiente. Los asistentes virtuales pueden responder preguntas, organizar recordatorios y controlar dispositivos inteligentes en el hogar. También existen sistemas de recomendación utilizados en plataformas de música, películas y redes sociales para mostrar contenido personalizado.</p>
+                    <p>La inteligencia artificial mejora la productividad en empresas e industrias, ya que puede analizar grandes cantidades de información en poco tiempo. Además, ayuda a reducir errores humanos en áreas como la medicina, el transporte y la manufactura.</p>
+                    <p>En la vida cotidiana, la IA también contribuye a la seguridad mediante sistemas de reconocimiento facial, detección de fraudes y monitoreo inteligente. Muchas aplicaciones de navegación utilizan inteligencia artificial para calcular rutas y evitar tráfico.</p>
+                    <p>Sin embargo, también existen riesgos asociados al uso de esta tecnología. Uno de los más importantes es la privacidad de los datos personales. Muchas plataformas recopilan información sobre hábitos, gustos y actividades de los usuarios, lo que genera preocupación sobre cómo se utilizan esos datos.</p>
+                    <p>Otro riesgo es la posible sustitución de algunos empleos debido a la automatización. Algunas tareas repetitivas pueden ser realizadas por máquinas y programas inteligentes, afectando ciertos sectores laborales. También existe preocupación por el uso indebido de la inteligencia artificial para crear información falsa, manipular contenido o realizar ataques cibernéticos.</p>
+                    <p>Además, depender demasiado de la tecnología puede reducir ciertas habilidades humanas, como la memoria o el pensamiento crítico. Por ello, es importante utilizar la inteligencia artificial de manera responsable y equilibrada.</p>
+                    <p>La inteligencia artificial seguirá avanzando y formando parte de la vida cotidiana. Por esta razón, es fundamental promover el uso ético de la tecnología y desarrollar regulaciones que protejan a las personas y sus derechos digitales.</p>
+                </div>
+            </div>
+        </div>
+        <a href="index.html">Volver a la página principal</a>
+        
+        </main>
+    </div>
+    <script>
+    // Contador de visitas
+    const visitCountKey = 'visitCount';
+    const visitCount = Number(localStorage.getItem(visitCountKey) || 0) + 1;
+    localStorage.setItem(visitCountKey, visitCount);
+    document.getElementById('contador').innerText = String(visitCount).padStart(5, '0');
+
+    // Comentarios
+    const form = document.getElementById('comment-form');
+    const display = document.getElementById('comments-display');
+    const commentsKey = 'comments';
+
+    function loadComments() {
+        const comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+        display.innerHTML = [...comments].reverse().map(comment => `
+            <div class="comment-item">
+                <strong>${comment.name}:</strong> ${comment.text}
+            </div>
+        `).join('');
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('user-name').value.trim();
+        const text = document.getElementById('user-comment').value.trim();
+        if (!name || !text) return;
+
+        const comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+        comments.push({ name, text });
+        localStorage.setItem(commentsKey, JSON.stringify(comments));
+        form.reset();
+        loadComments();
+    });
+
+    loadComments();
+</script>
+
+
+</body>
+</html>

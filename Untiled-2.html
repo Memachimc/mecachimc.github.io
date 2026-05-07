@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videojuegos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 2px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .game-card {
+            text-align: center;
+        }
+
+        .game-card button {
+            margin-top: 18px;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 999px;
+            background: #333;
+            color: #fff;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .game-card button:hover {
+            background: #555;
+            transform: translateY(-2px);
+        }
+
+        .detail-card {
+            background: #fff;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05);
+            margin-top: 20px;
+            line-height: 1.8;
+        }
+
+        .detail-card h2 {
+            margin-top: 0;
+            color: #222;
+        }
+
+        .detail-card p {
+            margin-bottom: 1rem;
+        }
+
+        .game-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .game-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .game-genre {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            padding: 40px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #333;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 80px;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+            transition: border-color 0.3s;
+        }
+
+        a:hover {
+            border-bottom-color: #333;
+        }
+
+        .comment-box{
+        background: #111;
+        border: 1px solid cyan;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .comment-box h3{
+        color: cyan;
+        margin-bottom: 5px;
+    }
+        
+   
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Videojuegos</h1>
+            <p class="subtitle">Un mundo de entretenimiento interactivo</p>
+        </header>
+
+        <section class="section">
+            <h2>Géneros Populares</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-icon">🎮</div>
+                    <p class="game-title">Acción</p>
+                    <p class="game-genre">Aventura y adrenalina</p>
+                    <button id="show-action-details">Ver</button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🧩</div>
+                    <p class="game-title">Puzzle</p>
+                    <p class="game-genre">Retos mentales</p>
+                    <button id="show-puzzle-details">Ver</button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">⚔️</div>
+                    <p class="game-title">RPG</p>
+                    <p class="game-genre">Narrativa y personajes</p>
+                    <button id="show-rpg-details">Ver</button>
+                </div>
+                <div class="game-card">
+                    <div class="game-icon">🏎️</div>
+                    <p class="game-title">Carreras</p>
+                    <p class="game-genre">Velocidad y competencia</p>
+                    <button id="show-racing-details">Ver</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div id="action-detail-card" class="detail-card" hidden>
+                <h2>Género de videojuegos de acción (aventura y adrenalina)</h2>
+                <p>Los videojuegos de acción son uno de los géneros más populares dentro de la industria de los videojuegos. Se caracterizan por ofrecer experiencias dinámicas, rápidas y llenas de emoción, donde el jugador debe reaccionar con velocidad, precisión y estrategia para superar diferentes desafíos. Este tipo de videojuegos suele combinar combate, exploración, persecuciones, misiones y situaciones intensas que generan adrenalina y entretenimiento.</p>
+                <p>El género de acción tiene como objetivo principal mantener al jugador constantemente activo. A diferencia de otros géneros más tranquilos o basados en la reflexión, los videojuegos de acción exigen movimientos rápidos, coordinación y toma de decisiones en poco tiempo. Muchas veces el jugador debe enfrentarse a enemigos, evitar obstáculos, resolver situaciones peligrosas o completar misiones bajo presión.</p>
+                <p>Dentro de este género existen diferentes subgéneros. Los juegos de aventura y acción mezclan combates con exploración de escenarios, historia y resolución de desafíos. En estos videojuegos, el jugador suele controlar a un personaje principal que debe avanzar por diferentes lugares, descubrir secretos y enfrentarse a enemigos mientras desarrolla una historia. Este tipo de juegos destacan por ofrecer mundos interesantes, personajes llamativos y experiencias emocionantes.</p>
+                <p>La adrenalina es una característica importante en los videojuegos de acción. Las persecuciones, explosiones, batallas intensas y momentos de tensión provocan emoción y mantienen la atención del jugador. Muchos juegos utilizan música rápida, efectos visuales y escenarios dinámicos para aumentar la sensación de intensidad.</p>
+                <p>Los videojuegos de acción también ayudan a desarrollar ciertas habilidades. Algunos estudios señalan que pueden mejorar la coordinación mano-ojo, los reflejos, la capacidad de reacción y la toma rápida de decisiones. Además, muchos juegos requieren planificación y estrategia para superar niveles difíciles o derrotar enemigos poderosos.</p>
+                <p>La evolución tecnológica ha permitido que este género tenga gráficos más realistas, mundos más grandes y sistemas de juego más complejos. Actualmente, muchos videojuegos de acción incluyen modos multijugador en línea, permitiendo que personas de diferentes partes del mundo jueguen juntas o compitan entre sí.</p>
+                <p>Algunos videojuegos famosos de acción y aventura son Minecraft, Grand Theft Auto V, The Legend of Zelda: Breath of the Wild, God of War y Call of Duty. Cada uno ofrece diferentes estilos de juego, pero todos comparten elementos de emoción, combate y exploración.</p>
+                <p>A pesar de su popularidad, es importante utilizar los videojuegos de manera equilibrada. Jugar durante tiempos moderados y combinar esta actividad con otras responsabilidades y ejercicios físicos ayuda a mantener hábitos saludables. Cuando se usan adecuadamente, los videojuegos de acción pueden ser una forma divertida de entretenimiento y una experiencia interactiva llena de aventura y adrenalina.</p>
+            </div>
+
+            <div id="puzzle-detail-card" class="detail-card" hidden>
+                <h2>Videojuegos de puzzles</h2>
+                <p>Los videojuegos de puzzles son un género enfocado principalmente en la resolución de problemas, acertijos y desafíos mentales. En este tipo de juegos, el jugador debe utilizar la lógica, la observación, la memoria y el razonamiento para avanzar. A diferencia de los juegos de acción, los videojuegos de puzzles suelen ser más tranquilos y requieren concentración y pensamiento estratégico.</p>
+                <p>Los desafíos pueden presentarse de muchas formas, como ordenar piezas, resolver laberintos, combinar colores, encontrar patrones o desbloquear mecanismos. Algunos juegos tienen niveles que aumentan progresivamente de dificultad, obligando al jugador a pensar de manera más creativa y rápida.</p>
+                <p>Este género es muy popular porque puede ayudar a desarrollar habilidades mentales como la resolución de problemas, la paciencia, la memoria y la capacidad de análisis. Muchos videojuegos educativos utilizan elementos de puzzle para hacer el aprendizaje más entretenido.</p>
+                <p>Existen puzzles simples y casuales para teléfonos móviles, pero también juegos complejos con historias profundas y desafíos avanzados. Algunos combinan aventura y exploración con acertijos, creando experiencias más completas.</p>
+                <p>Entre los videojuegos más conocidos de este género se encuentran Tetris, Candy Crush Saga, Portal 2 y Monument Valley.</p>
+                <p>Los videojuegos de puzzles son una opción ideal para personas que disfrutan los retos mentales y las experiencias relajadas pero desafiantes.</p>
+            </div>
+
+            <div id="rpg-detail-card" class="detail-card" hidden>
+                <h2>Videojuegos RPG</h2>
+                <p>Los videojuegos RPG, también conocidos como juegos de rol, son un género donde el jugador controla a uno o varios personajes dentro de una historia extensa y detallada. La sigla RPG proviene del inglés "Role Playing Game", que significa "juego de interpretación de roles". En estos videojuegos, el jugador suele asumir el papel de un héroe o aventurero que debe completar misiones, enfrentar enemigos y mejorar sus habilidades.</p>
+                <p>Una de las características principales de los RPG es el desarrollo del personaje. A medida que el jugador avanza, obtiene experiencia, sube de nivel y desbloquea nuevas habilidades o poderes. También es común encontrar armas, armaduras y objetos especiales que ayudan durante la aventura.</p>
+                <p>Los RPG suelen tener historias profundas, personajes complejos y mundos muy grandes para explorar. Muchas veces incluyen decisiones que afectan el desarrollo de la historia, permitiendo diferentes finales o caminos dentro del juego.</p>
+                <p>Existen varios tipos de RPG. Algunos están centrados en combates por turnos, mientras que otros utilizan acción en tiempo real. También existen RPG en línea donde miles de jugadores pueden interactuar en un mismo mundo virtual.</p>
+                <p>Este género destaca por fomentar la exploración, la estrategia y la creatividad. Los jugadores pueden personalizar personajes, formar equipos y participar en misiones secundarias además de la historia principal.</p>
+                <p>Algunos videojuegos RPG famosos son Final Fantasy VII, The Elder Scrolls V: Skyrim, Pokémon Red and Blue, The Witcher 3: Wild Hunt y Genshin Impact.</p>
+                <p>Los RPG son muy valorados por ofrecer experiencias largas, inmersivas y llenas de aventura.</p>
+            </div>
+
+            <div id="racing-detail-card" class="detail-card" hidden>
+                <h2>Videojuegos de carreras</h2>
+                <p>Los videojuegos de carreras son un género basado en competencias de velocidad utilizando automóviles, motocicletas, bicicletas u otros vehículos. El objetivo principal es llegar a la meta antes que los demás participantes o completar circuitos en el menor tiempo posible.</p>
+                <p>Este género incluye diferentes tipos de carreras, como circuitos cerrados, carreras callejeras, rallies, carreras de motocross o incluso competiciones futuristas con vehículos voladores. Los juegos pueden ser realistas, simulando físicas precisas y manejo detallado, o más arcade, con elementos exagerados y poderes especiales.</p>
+                <p>Los videojuegos de carreras requieren habilidades como coordinación, reflejos rápidos y capacidad de toma de decisiones bajo presión. Muchos incluyen modos multijugador donde los jugadores pueden competir en línea contra personas de todo el mundo.</p>
+                <p>Además de la competición, estos juegos ofrecen personalización de vehículos, mejoras de rendimiento y modos de carrera con historias. Algunos incluyen elementos de simulación, como gestión de neumáticos, combustible y clima, para una experiencia más realista.</p>
+                <p>Algunos videojuegos famosos de carreras son Gran Turismo, Need for Speed, Mario Kart, Forza Motorsport y Dirt Rally.</p>
+                <p>Los videojuegos de carreras son ideales para quienes disfrutan la velocidad, la competición y la adrenalina de las pistas.</p>
+            </div>
+        </section>
+    
+    
+                <div id="comments-display"></div>
+           <a href="index.html">Volver a la página principal</a>
+        </main>
+    </div>
+    <script>
+    
+
+        function toggleDetail(buttonId, cardId) {
+            const button = document.getElementById(buttonId);
+            const card = document.getElementById(cardId);
+            button.addEventListener('click', function() {
+                const isHidden = card.hasAttribute('hidden');
+                card.hidden = !isHidden;
+                this.textContent = isHidden ? 'Ocultar' : 'Ver';
+            });
+        }
+
+        toggleDetail('show-action-details', 'action-detail-card');
+        toggleDetail('show-puzzle-details', 'puzzle-detail-card');
+        toggleDetail('show-rpg-details', 'rpg-detail-card');
+        toggleDetail('show-racing-details', 'racing-detail-card');
+    </script>
+</body>
+</html>

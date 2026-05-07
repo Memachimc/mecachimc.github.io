@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnologia para Hoy</title>
+  <style>
+    :root {
+      --text: #e2e8f0;
+      --accent: #38bdf8;
+      --accent-strong: #0ea5e9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+      line-height: 1.7;
+    }
+    header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(56,189,248,0.18), transparent 35%);
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      letter-spacing: -0.05em;
+    }
+    header p {
+      max-width: 720px;
+      margin: 1rem auto 0;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .card {
+      background: rgba(35, 88, 212, 0.88);
+      border: 1px solid rgba(142, 99, 99, 0.08);
+      border-radius: 1.25rem;
+      padding: 1.75rem;
+      box-shadow: 0 24px 60px rgba(255, 221, 0, 0.18);
+    }
+    .card h2 {
+      margin-top: 0;
+      color: white;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.16);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .feature-list li {
+      margin-bottom: 0.9rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .feature-list li::before {
+      content: "-";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+    .hero-image {
+      width: 100%;
+      border-radius: 1.25rem;
+      margin-top: 1.5rem;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, #0ea5e9 0%, #7c3aed 100%);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 1.15rem;
+      text-align: center;
+      padding: 2rem;
+    }
+    .cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .cta a {
+      display: inline-block;
+      padding: 0.95rem 1.8rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #4c5c83;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .cta a:hover {
+      transform: translateY(-2px);
+      background: var(--accent-strong);
+    }
+    @media (max-width: 840px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+     .comment-box{
+        background: #111;
+        border: 1px solid cyan;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        color: white;
+    }
+
+    .comment-box h3{
+        color: cyan;
+        margin-bottom: 5px;
+    }
+
+    /* Comentarios */
+        #comment-form { display: grid; gap: 10px; margin-top: 20px; }
+        input, textarea { background: #05050a; border: 1px solid #444; color: white; padding: 12px; border-radius: 5px; }
+    button.btn-main {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #4c5c83;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Tecnologia</h1>
+      <p>Explora los temas clave de la tecnología actual, desde IA hasta aplicaciones móviles.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <article class="card">
+       
+        <h2>La evolución de la inteligencia artificial y su impacto en la vida diaria</h2>
+        <p>La inteligencia artificial (IA) es una rama de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como reconocer imágenes, comprender lenguaje, tomar decisiones y aprender de la experiencia. Aunque el concepto existe desde mediados del siglo XX, en los últimos años ha tenido un crecimiento acelerado gracias al aumento de la capacidad de las computadoras, el acceso a grandes cantidades de datos y el desarrollo de nuevos algoritmos.</p>
+        <p>En sus primeras etapas, la IA se utilizaba principalmente para resolver cálculos matemáticos y problemas lógicos simples. Con el paso del tiempo, comenzaron a desarrollarse sistemas más avanzados capaces de reconocer voz, traducir idiomas y analizar información compleja. Actualmente, la inteligencia artificial está presente en muchas actividades cotidianas. Los asistentes virtuales pueden responder preguntas, reproducir música y controlar dispositivos inteligentes. Las plataformas de streaming utilizan IA para recomendar películas y canciones según los gustos de cada usuario. También se usa en redes sociales para mostrar contenido personalizado.</p>
+        <p>En el ámbito de la salud, la inteligencia artificial ayuda a detectar enfermedades mediante el análisis de imágenes médicas y datos clínicos. En la educación, existen plataformas que adaptan el aprendizaje al ritmo de cada estudiante. En el transporte, la IA es utilizada en sistemas de navegación y en el desarrollo de vehículos autónomos. En las empresas, permite automatizar procesos, mejorar la atención al cliente y analizar grandes cantidades de información para tomar decisiones.</p>
+        <p>A pesar de sus beneficios, la inteligencia artificial también genera preocupaciones. Muchas personas temen que algunas profesiones sean reemplazadas por máquinas automatizadas. Además, existen debates sobre la privacidad de los datos y el uso ético de esta tecnología. Por ello, es importante que el desarrollo de la IA se realice de manera responsable y regulada.</p>
+        <p>La inteligencia artificial continuará evolucionando en el futuro y probablemente tendrá un impacto aún mayor en la sociedad. Se espera que mejore áreas como la medicina, la comunicación, la seguridad y la investigación científica.</p>
+      </article>
+
+      <article class="card">
+        
+        <h2>La ciberseguridad y cómo proteger nuestra información en internet</h2>
+        <p>La ciberseguridad es el conjunto de medidas, herramientas y prácticas utilizadas para proteger sistemas informáticos, redes y datos frente a ataques digitales. En la actualidad, millones de personas utilizan internet diariamente para estudiar, trabajar, comunicarse y realizar compras, por lo que la protección de la información personal se ha convertido en una necesidad fundamental.</p>
+        <p>Los ciberdelincuentes utilizan diferentes métodos para robar información o causar daños. Uno de los ataques más comunes es el phishing, que consiste en engañar a las personas mediante correos electrónicos o páginas falsas para obtener contraseñas y datos bancarios. También existen virus y programas maliciosos conocidos como malware, capaces de dañar dispositivos o espiar actividades del usuario.</p>
+        <p>La ciberseguridad busca prevenir estos riesgos mediante diversas estrategias. Una de las más importantes es el uso de contraseñas seguras y difíciles de adivinar. También es recomendable activar la autenticación en dos pasos, que añade una capa extra de seguridad. Mantener los dispositivos y programas actualizados ayuda a corregir vulnerabilidades que pueden ser aprovechadas por atacantes.</p>
+        <p>Otra medida importante es evitar descargar archivos o aplicaciones de sitios desconocidos. Muchas amenazas digitales se esconden en programas falsos o enlaces sospechosos. Además, es fundamental utilizar antivirus y sistemas de protección que detecten amenazas en tiempo real.</p>
+        <p>Las empresas y organizaciones también dependen de la ciberseguridad para proteger información sensible. Bancos, hospitales, escuelas y gobiernos almacenan enormes cantidades de datos que podrían ser robados o alterados si no cuentan con sistemas de seguridad adecuados. Un ataque informático puede causar pérdidas económicas, daños a la reputación e incluso afectar servicios esenciales.</p>
+        <p>Con el crecimiento del uso de dispositivos inteligentes y la expansión del internet, la ciberseguridad seguirá siendo un tema cada vez más importante. La educación digital y el uso responsable de la tecnología son claves para proteger la información personal y evitar riesgos en línea.</p>
+      </article>
+
+      <article class="card">
+        
+        <h2>El uso de la realidad virtual y aumentada en la educación y los videojuegos</h2>
+        <p>La realidad virtual (RV) y la realidad aumentada (RA) son tecnologías que han transformado la manera en que las personas interactúan con entornos digitales. Ambas permiten crear experiencias más inmersivas e interactivas, aunque funcionan de forma diferente.</p>
+        <p>La realidad virtual consiste en crear un entorno completamente digital al que el usuario accede mediante dispositivos especiales, como visores o cascos. Al utilizar esta tecnología, la persona puede sentirse dentro de un mundo virtual generado por computadora. Por otro lado, la realidad aumentada combina elementos digitales con el entorno real, añadiendo imágenes, información o animaciones sobre lo que el usuario observa en el mundo físico.</p>
+        <p>En el ámbito educativo, estas tecnologías ofrecen nuevas formas de aprendizaje. La realidad virtual permite realizar simulaciones de situaciones difíciles de experimentar en la vida real. Por ejemplo, los estudiantes pueden explorar el sistema solar, visitar lugares históricos o practicar procedimientos médicos sin salir del salón de clases. Esto hace que el aprendizaje sea más dinámico y atractivo.</p>
+        <p>La realidad aumentada también tiene aplicaciones educativas importantes. Mediante teléfonos móviles o tabletas, los estudiantes pueden visualizar modelos tridimensionales de órganos humanos, planetas o estructuras arquitectónicas. Esto facilita la comprensión de temas complejos y aumenta el interés por el estudio.</p>
+        <p>En la industria de los videojuegos, la realidad virtual ha revolucionado la experiencia de juego. Los jugadores pueden moverse e interactuar dentro de mundos digitales de manera más realista. Algunos videojuegos permiten utilizar controles especiales para simular movimientos físicos y aumentar la inmersión. La realidad aumentada también ha sido utilizada en juegos que mezclan elementos virtuales con el entorno real.</p>
+        <p>Además de la educación y los videojuegos, estas tecnologías se utilizan en arquitectura, medicina, turismo y entrenamiento profesional. Sin embargo, todavía existen desafíos relacionados con el costo de los dispositivos y la necesidad de equipos potentes para su funcionamiento.</p>
+        <p>Con el avance tecnológico, la realidad virtual y aumentada probablemente serán cada vez más accesibles y tendrán un papel importante en diferentes áreas de la sociedad.</p>
+      </article>
+
+      <article class="card">
+        <h2>Los avances de la robótica en la medicina y la industria</h2>
+        <p>La robótica es una rama de la tecnología dedicada al diseño y desarrollo de máquinas capaces de realizar tareas automáticas o semiautomáticas. Los robots han evolucionado considerablemente en las últimas décadas y actualmente son utilizados en múltiples sectores, especialmente en la medicina y la industria.</p>
+        <p>En el ámbito industrial, los robots son empleados para realizar tareas repetitivas, peligrosas o que requieren alta precisión. En las fábricas automotrices, por ejemplo, existen robots capaces de ensamblar piezas, soldar estructuras y pintar vehículos con gran exactitud. Esto permite aumentar la velocidad de producción y reducir errores humanos.</p>
+        <p>La automatización industrial también mejora la seguridad laboral, ya que algunos robots pueden trabajar en ambientes peligrosos donde existiría riesgo para las personas. Además, los sistemas robóticos pueden operar durante largas jornadas sin disminuir su rendimiento.</p>
+        <p>En la medicina, la robótica ha permitido importantes avances en tratamientos y cirugías. Los robots quirúrgicos ayudan a los médicos a realizar operaciones más precisas y menos invasivas. Gracias a esto, los pacientes suelen recuperarse más rápido y con menos complicaciones. También existen robots utilizados en rehabilitación física, que ayudan a pacientes a recuperar movilidad después de accidentes o enfermedades.</p>
+        <p>Otra aplicación importante es el uso de robots para desinfectar hospitales y transportar medicamentos o materiales médicos. Algunos dispositivos robóticos incluso pueden asistir a personas mayores o con discapacidades en actividades diarias.</p>
+        <p>La inteligencia artificial también ha mejorado el funcionamiento de muchos robots modernos, permitiéndoles reconocer objetos, analizar información y adaptarse a diferentes situaciones. Esto ha ampliado sus posibilidades de uso en distintos campos.</p>
+        <p>Sin embargo, la expansión de la robótica genera debates sobre el impacto laboral. Algunas personas consideran que la automatización podría reemplazar ciertos empleos humanos. Por ello, muchos expertos destacan la importancia de preparar a las nuevas generaciones en áreas tecnológicas y digitales.</p>
+        <p>La robótica continuará desarrollándose y tendrá un papel fundamental en la transformación de la industria, la medicina y otros sectores importantes.</p>
+      </article>
+
+      <article class="card">
+        <h2>La importancia del desarrollo de aplicaciones móviles en la actualidad</h2>
+        <p>El desarrollo de aplicaciones móviles se ha convertido en una de las áreas tecnológicas más importantes de la actualidad debido al enorme crecimiento del uso de teléfonos inteligentes y tabletas. Las aplicaciones móviles son programas diseñados para ejecutarse en dispositivos móviles y permiten realizar una gran variedad de actividades.</p>
+        <p>Actualmente, existen aplicaciones para comunicación, entretenimiento, educación, salud, compras, transporte y productividad. Muchas personas utilizan aplicaciones diariamente para enviar mensajes, ver videos, escuchar música, estudiar o trabajar. Esto ha provocado que empresas y organizaciones inviertan cada vez más en el desarrollo de software móvil.</p>
+        <p>El proceso de creación de aplicaciones incluye varias etapas, como el diseño de la interfaz, la programación, las pruebas y el mantenimiento. Los desarrolladores utilizan diferentes lenguajes y herramientas para crear aplicaciones compatibles con sistemas operativos como Android e iOS.</p>
+        <p>Las aplicaciones móviles también han cambiado la manera en que funcionan muchos negocios. Por ejemplo, las tiendas en línea permiten comprar productos desde cualquier lugar, mientras que las aplicaciones bancarias facilitan realizar pagos y transferencias sin necesidad de acudir a una sucursal física. Las plataformas de transporte y entrega de comida también dependen de aplicaciones móviles para conectar usuarios y servicios.</p>
+        <p>En el ámbito educativo, las aplicaciones ofrecen acceso rápido a cursos, libros digitales y herramientas de aprendizaje interactivo. En la salud, existen aplicaciones capaces de monitorear actividad física, controlar hábitos y recordar medicamentos.</p>
+        <p>El diseño de aplicaciones modernas se enfoca en ofrecer experiencias rápidas, intuitivas y seguras para los usuarios. Por ello, la seguridad y la protección de datos son aspectos esenciales durante el desarrollo.</p>
+        <p>Además, el desarrollo de aplicaciones móviles representa una importante fuente de empleo en el sector tecnológico. Programadores, diseñadores y especialistas en experiencia de usuario trabajan en conjunto para crear aplicaciones innovadoras y funcionales.</p>
+        <p>Con el avance de tecnologías como la inteligencia artificial, el internet de las cosas y la computación en la nube, las aplicaciones móviles continuarán evolucionando y tendrán un papel cada vez más importante en la vida cotidiana.</p>
+      </article>
+    </section>
+    <a href="index.html">Volver a la página principal</a>
+    </div>
+    <script>
+    
+
+    // Comentarios
+      const form = document.getElementById('comment-form');
+    const display = document.getElementById('comments-display');
+    const commentsKey = 'comments';
+
+    function loadComments() {
+        const comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+        display.innerHTML = [...comments].reverse().map(comment => `
+            <div class="comment-item">
+                <strong>${comment.name}:</strong> ${comment.text}
+            </div>
+        `).join('');
+    }
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('user-name').value.trim();
+        const text = document.getElementById('user-comment').value.trim();
+        if (!name || !text) return;
+
+        const comments = JSON.parse(localStorage.getItem(commentsKey) || '[]');
+        comments.push({ name, text });
+        localStorage.setItem(commentsKey, JSON.stringify(comments));
+        form.reset();
+        loadComments();
+    });
+
+    loadComments();
+
+    </script>
+</body>
+</html>
